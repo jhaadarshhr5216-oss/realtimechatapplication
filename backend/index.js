@@ -11,7 +11,7 @@ const messageRoutes = require("./routes/messageRoute");
 // Import app & server (socket.io setup)
 const { app, server } = require("./sokcetIO/server");
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 10000;
 
 // Middleware
 app.use(express.json());
@@ -53,6 +53,6 @@ app.get("/", (req, res) => {
 });
 
 // Start server
-server.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+server.listen(PORT, '0.0.0.0', () => {
+    console.log(`Server is running on port ${PORT}`);
 });
